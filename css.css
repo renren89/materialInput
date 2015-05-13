@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.input-container {
+  top: 500px;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+textarea {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  left: 5px;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  transition: 0.2s ease all;
+}
+
+textarea:focus ~ label, 
+textarea:valid ~ label {
+  color: #5264AE;
+  font-size: 14px;
+  top: -20px;
+}
+
+.bar {
+  display: block; 
+  position: relative; 
+  width: 100%;
+}
+
+.bar:before, 
+.bar:after {
+  background: #5264AE;
+  bottom: 1px;
+  content: '';
+  height: 2px;
+  position: absolute;
+  transition: 0.2s ease all;
+  width: 0;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+textarea:focus ~ .bar:before,
+textarea:focus ~ .bar:after {
+  width: 50%;
+}
